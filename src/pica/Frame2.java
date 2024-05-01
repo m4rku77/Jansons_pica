@@ -2,6 +2,8 @@ package pica;
 
 import java.awt.EventQueue;
 import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -19,6 +21,10 @@ import javax.swing.JSpinner;
 import javax.swing.JSeparator;
 import javax.swing.JSlider;
 import javax.swing.JToggleButton;
+import javax.swing.JTree;
+import javax.swing.JList;
+import javax.swing.JFormattedTextField;
+import javax.swing.SpinnerNumberModel;
 
 public class Frame2 extends JFrame {
 
@@ -29,6 +35,7 @@ public class Frame2 extends JFrame {
     private JTextField txtPicuVeidi;
     private JTextField txtExtraToppings;
     private JTextField txtPizzasSize;
+    private JTextField txtNoOfPizzas;
 
     /**
      * Launch the application.
@@ -60,9 +67,32 @@ public class Frame2 extends JFrame {
         this.getContentPane().setLayout(null);
         Image img = new ImageIcon(this.getClass().getResource("/menuframe.png")).getImage();
 
+        
+        
         String[] picuVeidi = { "Havaju", "Margarita", "Grieķu", "Pepperoni" };
         Double [] picuCenas = {9.99, 5.99, 12.99, 8.99};
         Double[] picuToppings = {0.99, 1.49, 1.99, 1.99};
+        		
+        
+        
+        		JSpinner spinner = new JSpinner();
+        		spinner.setModel(new SpinnerNumberModel(1, 1, 5, 1));
+        		spinner.setOpaque(false);
+        		spinner.setBounds(225, 459, 42, 32);
+        		getContentPane().add(spinner);
+        		
+        		txtNoOfPizzas = new JTextField();
+        		txtNoOfPizzas.setVerifyInputWhenFocusTarget(false);
+        		txtNoOfPizzas.setText("No. of Pizzas");
+        		txtNoOfPizzas.setOpaque(false);
+        		txtNoOfPizzas.setFont(new Font("Ink Free", Font.BOLD | Font.ITALIC, 25));
+        		txtNoOfPizzas.setFocusTraversalKeysEnabled(false);
+        		txtNoOfPizzas.setEditable(false);
+        		txtNoOfPizzas.setColumns(10);
+        		txtNoOfPizzas.setCaretColor(Color.WHITE);
+        		txtNoOfPizzas.setBorder(null);
+        		txtNoOfPizzas.setBounds(63, 459, 171, 32);
+        		getContentPane().add(txtNoOfPizzas);
         		
         		JComboBox comboBox_1 = new JComboBox();
         		comboBox_1.setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
@@ -149,16 +179,27 @@ public class Frame2 extends JFrame {
         
                 JLabel lblNewLabel = new JLabel("");
                 JLabel lblNewLabel_1 = new JLabel("");
-                lblNewLabel_1.setBounds(269, 481, 135, 101);
+                lblNewLabel_1.setBounds(297, 536, 107, 76);
                 getContentPane().add(lblNewLabel_1);
                 
-                Image greenArrowImg = new ImageIcon(this.getClass().getResource("/greenarrow.png")).getImage();
+                Image greenArrowImg = new ImageIcon(this.getClass().getResource("/greenarrow2.png")).getImage();
                 lblNewLabel_1.setIcon(new ImageIcon(greenArrowImg));
+                
+                lblNewLabel_1.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                    	setVisible(false);
+                        Frame5 frame5 = new Frame5();
+                        frame5.setVisible(true);
+                    }
+                });
+                
+                
                 
                 lblNewLabel.setIcon(new ImageIcon(img));
                 		
                         lblNewLabel.setIcon(new ImageIcon(img));
-                        lblNewLabel.setBounds(0, 0, 900, 665);
+                        lblNewLabel.setBounds(0, 0, img.getWidth(null), img.getHeight(null));
                         this.getContentPane().add(lblNewLabel);
     }
 }

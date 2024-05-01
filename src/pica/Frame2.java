@@ -15,6 +15,10 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import javax.swing.JCheckBox;
 import javax.swing.JTextArea;
+import javax.swing.JSpinner;
+import javax.swing.JSeparator;
+import javax.swing.JSlider;
+import javax.swing.JToggleButton;
 
 public class Frame2 extends JFrame {
 
@@ -24,6 +28,7 @@ public class Frame2 extends JFrame {
     private static final long serialVersionUID = 1L;
     private JTextField txtPicuVeidi;
     private JTextField txtExtraToppings;
+    private JTextField txtPizzasSize;
 
     /**
      * Launch the application.
@@ -56,11 +61,32 @@ public class Frame2 extends JFrame {
         Image img = new ImageIcon(this.getClass().getResource("/menuframe.png")).getImage();
 
         String[] picuVeidi = { "Havaju", "Margarita", "Grieķu", "Pepperoni" };
+        Double [] picuCenas = {9.99, 5.99, 12.99, 8.99};
+        Double[] picuToppings = {0.99, 1.49, 1.99, 1.99};
+        		
+        		JComboBox comboBox_1 = new JComboBox();
+        		comboBox_1.setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
+        		comboBox_1.setFont(new Font("Ink Free", Font.BOLD, 15));
+        		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Small", "Medium ", "Large"}));
+        		comboBox_1.setBounds(63, 407, 85, 22);
+        		getContentPane().add(comboBox_1);
+        		
+        		txtPizzasSize = new JTextField();
+        		txtPizzasSize.setVerifyInputWhenFocusTarget(false);
+        		txtPizzasSize.setText("Pizza's size");
+        		txtPizzasSize.setOpaque(false);
+        		txtPizzasSize.setFont(new Font("Ink Free", Font.BOLD | Font.ITALIC, 25));
+        		txtPizzasSize.setFocusTraversalKeysEnabled(false);
+        		txtPizzasSize.setEditable(false);
+        		txtPizzasSize.setColumns(10);
+        		txtPizzasSize.setCaretColor(Color.WHITE);
+        		txtPizzasSize.setBorder(null);
+        		txtPizzasSize.setBounds(63, 370, 182, 32);
+        		getContentPane().add(txtPizzasSize);
                 
-                JTextArea textArea = new JTextArea();
-                textArea.setEditable(false);
-                textArea.setBounds(189, 156, 76, 22);
-                getContentPane().add(textArea);
+                
+                
+                
                 
                 JCheckBox chckbxOnions = new JCheckBox("Red Onions");
                 chckbxOnions.setOpaque(false);
@@ -114,8 +140,6 @@ public class Frame2 extends JFrame {
                 JComboBox<String> comboBox = new JComboBox<>(picuVeidi);
                 comboBox.setOpaque(false);
                 comboBox.setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
-                comboBox.setFocusTraversalKeysEnabled(false);
-                comboBox.setFocusable(false);
                 comboBox.setModel(new DefaultComboBoxModel(new String[] {"Hawaiian", "Margherita", "Greek", "Pepperoni"}));
                 comboBox.setBackground(new Color(255, 255, 255));
                 comboBox.setFont(new Font("Ink Free", Font.BOLD, 15));
@@ -124,7 +148,15 @@ public class Frame2 extends JFrame {
                 getContentPane().add(comboBox);
         
                 JLabel lblNewLabel = new JLabel("");
+                JLabel lblNewLabel_1 = new JLabel("");
+                lblNewLabel_1.setBounds(269, 481, 135, 101);
+                getContentPane().add(lblNewLabel_1);
                 
+                Image greenArrowImg = new ImageIcon(this.getClass().getResource("/greenarrow.png")).getImage();
+                lblNewLabel_1.setIcon(new ImageIcon(greenArrowImg));
+                
+                lblNewLabel.setIcon(new ImageIcon(img));
+                		
                         lblNewLabel.setIcon(new ImageIcon(img));
                         lblNewLabel.setBounds(0, 0, 900, 665);
                         this.getContentPane().add(lblNewLabel);

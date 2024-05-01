@@ -69,10 +69,26 @@ public class Frame2 extends JFrame {
 
         
         
-        String[] picuVeidi = { "Havaju", "Margarita", "Grieķu", "Pepperoni" };
+        String[] picuVeidi = { "Hawaiian", "Margherita", "Greeke", "Pepperoni" };
         Double [] picuCenas = {9.99, 5.99, 12.99, 8.99};
         Double[] picuToppings = {0.99, 1.49, 1.99, 1.99};
         		
+        Image atpakalarrow = new ImageIcon(this.getClass().getResource("/atpakalarrow.png")).getImage();
+        JLabel greenarrow = new JLabel("");
+        greenarrow.setIcon(new ImageIcon(atpakalarrow));
+        greenarrow.setBounds(10, 557, 110, 86);
+        this.getContentPane().add(greenarrow);
+
+       greenarrow.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+            	setVisible(false); 
+            	Frame5 frame5 = new Frame5();
+            	frame5.setVisible(true);
+            }
+        });
+
+       
         
         
         		JSpinner spinner = new JSpinner();
@@ -170,7 +186,6 @@ public class Frame2 extends JFrame {
                 JComboBox<String> comboBox = new JComboBox<>(picuVeidi);
                 comboBox.setOpaque(false);
                 comboBox.setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
-                comboBox.setModel(new DefaultComboBoxModel(new String[] {"Hawaiian", "Margherita", "Greek", "Pepperoni"}));
                 comboBox.setBackground(new Color(255, 255, 255));
                 comboBox.setFont(new Font("Ink Free", Font.BOLD, 15));
                 comboBox.setForeground(new Color(0, 0, 0));

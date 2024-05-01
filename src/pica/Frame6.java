@@ -16,17 +16,14 @@ import java.awt.Font;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 
-public class Frame4 extends JFrame {
+public class Frame6 extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtName;
-	private JTextField txtAddress;
 	private JTextField txtPhoneNumber;
 	private JTextField textField;
-	private JTextField textField_1;
 	private JTextField textField_2;
-	private JLabel lblNewLabel_1;
 
 	/**
 	 * Launch the application.
@@ -35,7 +32,7 @@ public class Frame4 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Frame4 frame = new Frame4();
+					Frame6 frame = new Frame6();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,7 +44,7 @@ public class Frame4 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Frame4() {
+	public Frame6() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 898, 693);
 		contentPane = new JPanel();
@@ -58,33 +55,32 @@ public class Frame4 extends JFrame {
 		
 		Image contactInfo = new ImageIcon(this.getClass().getResource("/contactinfo.jpg")).getImage();
         
-		Image atpakalarrow = new ImageIcon(this.getClass().getResource("/atpakalarrow.png")).getImage();
-		
-		 JLabel lblNewLabel_1 = new JLabel("");
-	        lblNewLabel_1.setIcon(new ImageIcon(atpakalarrow));
-	        lblNewLabel_1.setBounds(10, 557, 110, 86);
-	        contentPane.add(lblNewLabel_1);
-	        
-	        lblNewLabel_1.addMouseListener(new MouseAdapter() {
-	            @Override
-	            public void mouseClicked(MouseEvent e) {
-	            	setVisible(false);
-	                Frame5 frame5 = new Frame5();
-	                frame5.setVisible(true);
-	            }
-	        });
-        
         JSpinner spinner = new JSpinner();
         spinner.setOpaque(false);
         spinner.setModel(new SpinnerNumberModel(371, 0, 998, 1));
-        spinner.setBounds(71, 398, 49, 20);
+        spinner.setBounds(71, 318, 49, 20);
         contentPane.add(spinner);
         
-        textField_1 = new JTextField();
-        textField_1.setFont(new Font("Ink Free", Font.BOLD, 15));
-        textField_1.setColumns(10);
-        textField_1.setBounds(71, 304, 86, 20);
-        contentPane.add(textField_1);
+        Image atpakalarrow = new ImageIcon(this.getClass().getResource("/atpakalarrow.png")).getImage();
+        
+        
+        JLabel lblNewLabel_1 = new JLabel("");
+        lblNewLabel_1.setIcon(new ImageIcon(atpakalarrow));
+        lblNewLabel_1.setBounds(10, 557, 110, 86);
+        contentPane.add(lblNewLabel_1);
+        
+        lblNewLabel_1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+            	setVisible(false);
+                Frame5 frame5 = new Frame5();
+                frame5.setVisible(true);
+            }
+        });
+        
+        
+        
+        
         
         textField_2 = new JTextField();
         textField_2.setInheritsPopupMenu(true);
@@ -94,7 +90,7 @@ public class Frame4 extends JFrame {
         textField_2.setBorder(null);
         textField_2.setFont(new Font("Ink Free", Font.BOLD, 15));
         textField_2.setColumns(10);
-        textField_2.setBounds(130, 397, 110, 21);
+        textField_2.setBounds(130, 317, 110, 21);
         contentPane.add(textField_2);
         
         textField = new JTextField();
@@ -113,7 +109,7 @@ public class Frame4 extends JFrame {
         txtPhoneNumber.setColumns(10);
         txtPhoneNumber.setCaretColor(Color.WHITE);
         txtPhoneNumber.setBorder(null);
-        txtPhoneNumber.setBounds(71, 354, 200, 32);
+        txtPhoneNumber.setBounds(71, 274, 200, 32);
         contentPane.add(txtPhoneNumber);
         
         txtName = new JTextField();
@@ -129,24 +125,10 @@ public class Frame4 extends JFrame {
         txtName.setBounds(71, 190, 145, 32);
         contentPane.add(txtName);
         
-        txtAddress = new JTextField();
-        txtAddress.setVerifyInputWhenFocusTarget(false);
-        txtAddress.setText("Address:");
-        txtAddress.setOpaque(false);
-        txtAddress.setFont(new Font("Ink Free", Font.BOLD | Font.ITALIC, 25));
-        txtAddress.setFocusTraversalKeysEnabled(false);
-        txtAddress.setEditable(false);
-        txtAddress.setColumns(10);
-        txtAddress.setCaretColor(Color.WHITE);
-        txtAddress.setBorder(null);
-        txtAddress.setBounds(71, 269, 145, 32);
-        contentPane.add(txtAddress);
-        
         JLabel lblNewLabel = new JLabel("");
         lblNewLabel.setIcon(new ImageIcon(contactInfo));
         
         lblNewLabel.setBounds(0, 0, 885, 657);
         contentPane.add(lblNewLabel);
 	}
-
 }

@@ -52,19 +52,16 @@ public class Frame5 extends JFrame {
         contentPane.setLayout(null);
         Image img = new ImageIcon(this.getClass().getResource("/aboutscreen.png")).getImage();
         
-        JTextPane txtpnGraphicDesignerMarkuss_1_1 = new JTextPane();
-        txtpnGraphicDesignerMarkuss_1_1.setText("No");
-        txtpnGraphicDesignerMarkuss_1_1.setRequestFocusEnabled(false);
-        txtpnGraphicDesignerMarkuss_1_1.setOpaque(false);
-        txtpnGraphicDesignerMarkuss_1_1.setFont(new Font("Ink Free", Font.BOLD, 35));
-        txtpnGraphicDesignerMarkuss_1_1.setEditable(false);
-        txtpnGraphicDesignerMarkuss_1_1.setBounds(307, 393, 58, 37);
-        contentPane.add(txtpnGraphicDesignerMarkuss_1_1);
+        JTextPane txtpnNo = new JTextPane();
+        txtpnNo.setText("No");
+        txtpnNo.setRequestFocusEnabled(false);
+        txtpnNo.setOpaque(false);
+        txtpnNo.setFont(new Font("Ink Free", Font.BOLD, 35));
+        txtpnNo.setEditable(false);
+        txtpnNo.setBounds(307, 393, 58, 37);
+        contentPane.add(txtpnNo);
         
         JTextPane txtpnYes = new JTextPane();
-        
-       
-        
         txtpnYes.setText("Yes");
         txtpnYes.setRequestFocusEnabled(false);
         txtpnYes.setOpaque(false);
@@ -95,5 +92,16 @@ public class Frame5 extends JFrame {
                 frame4.setVisible(true);
             }
         });
+        
+        
+        txtpnNo.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+            	setVisible(false); 
+                Frame6 frame6 = new Frame6();
+                frame6.setVisible(true);
+            }
+        });
+        
 }
 }

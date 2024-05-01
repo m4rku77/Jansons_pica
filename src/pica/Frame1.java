@@ -24,6 +24,7 @@ public class Frame1 {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -48,14 +49,33 @@ public class Frame1 {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 654, 358);
+		frame.setBounds(100, 100, 915, 659);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("/blog_pizzalobby.jpg")).getImage();
+		Image img = new ImageIcon(this.getClass().getResource("/mainreal.png")).getImage();
+		
+		JButton btnNewButton = new JButton("START");
+		btnNewButton.setFocusable(false);
+		btnNewButton.setFocusTraversalKeysEnabled(false);
+		btnNewButton.setFocusPainted(false);
+		btnNewButton.setDefaultCapable(false);
+		btnNewButton.setContentAreaFilled(false);
+		btnNewButton.setBorderPainted(false);
+		btnNewButton.setForeground(new Color(0, 0, 0));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Frame2 frame = new Frame2();
+			    frame.setVisible(true);
+			}
+		});
+		btnNewButton.setBackground(new Color(255, 255, 255));
+		btnNewButton.setFont(new Font("Ink Free", Font.BOLD, 20));
+		btnNewButton.setBounds(351, 428, 197, 42);
+		frame.getContentPane().add(btnNewButton);
 		lblNewLabel.setIcon(new ImageIcon(img));
-		lblNewLabel.setBounds(0, 0, 640, 319);
+		lblNewLabel.setBounds(0, 0, 899, 622);
 		frame.getContentPane().add(lblNewLabel);
 	}
 }

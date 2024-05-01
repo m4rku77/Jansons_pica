@@ -2,6 +2,8 @@ package pica;
 
 import java.awt.EventQueue;
 import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -10,6 +12,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextPane;
 import java.awt.Font;
+import java.awt.Frame;
 
 public class Frame5 extends JFrame {
 
@@ -23,7 +26,7 @@ public class Frame5 extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Frame3 frame = new Frame3();
+                    Frame5 frame = new Frame5();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -59,6 +62,9 @@ public class Frame5 extends JFrame {
         contentPane.add(txtpnGraphicDesignerMarkuss_1_1);
         
         JTextPane txtpnYes = new JTextPane();
+        
+       
+        
         txtpnYes.setText("Yes");
         txtpnYes.setRequestFocusEnabled(false);
         txtpnYes.setOpaque(false);
@@ -79,7 +85,15 @@ public class Frame5 extends JFrame {
         JLabel lblNewLabel = new JLabel("");
         lblNewLabel.setBounds(-654, 0, 1279, 693);
         contentPane.add(lblNewLabel);
-        lblNewLabel.setIcon(new ImageIcon(img)); // Set the loaded image to the JLabel
-
-    }
+        lblNewLabel.setIcon(new ImageIcon(img)); 
+        
+        txtpnYes.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+            	setVisible(false); 
+                Frame4 frame4 = new Frame4();
+                frame4.setVisible(true);
+            }
+        });
+}
 }

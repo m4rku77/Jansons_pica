@@ -13,12 +13,9 @@
 
 ## *Saraksts jeb **Task List***
 
-- [x] Izveidot sākuma ekrānu, kur var iepazīties ar noteikumiem un sākt spēli
-- [ ] Spiežot sākt spēli, izlec otrais ekrāns kur ir visas opcijas, lai nodrošinātu izvēli picām. 
+- [x] Izveidot sākuma ekrānu, kur var iepazīties ar noteikumiem un sākt pasūtījumu
+- [ ] Spiežot sākt, izlec otrais ekrāns kur ir visas opcijas, lai nodrošinātu izvēli picām. 
 - [ ] Tālāk spiežot liek ievadīt kontaktinformāciju, un ja nav aķeksēts **saņemt uz vietas**, tad nākamais ekrāns ir **ievadīt savu adresi**
 - [ ] Visa informācija saglabājas **Dienas sūtijumi**, kas ir .txt fails 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ] Tiek ielikti objektā, visa informācija kas ir nepieciešama, lai pasūtījums būtu izdevies. 
       

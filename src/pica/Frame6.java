@@ -55,6 +55,24 @@ public class Frame6 extends JFrame {
 		
 		Image contactInfo = new ImageIcon(this.getClass().getResource("/contactinfo.jpg")).getImage();
         
+        JLabel uzprieksuarrow = new JLabel("");
+        Image greenarrow = new ImageIcon(this.getClass().getResource("/greenarrow2.png")).getImage();
+        uzprieksuarrow.setIcon(new ImageIcon(greenarrow));
+        
+        uzprieksuarrow.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+            	setVisible(false);
+                Frame7 frame7 = new Frame7();
+                frame7.setVisible(true);
+            }
+        });
+        
+        
+        
+        uzprieksuarrow.setBounds(303, 557, 107, 76);
+        contentPane.add(uzprieksuarrow);
+        
         JSpinner spinner = new JSpinner();
         spinner.setOpaque(false);
         spinner.setModel(new SpinnerNumberModel(371, 0, 998, 1));

@@ -10,8 +10,8 @@ import java.awt.Image;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
-public class Frame1 {
-
+public class Frame1{
+	
     private JFrame frame;
 
     /**
@@ -56,9 +56,9 @@ public class Frame1 {
                         btnNewButton.addActionListener(new ActionListener() {
                         	
                         	    public void actionPerformed(ActionEvent e) {
-                        	        frame.setVisible(false); 
                         	        Frame2 frame2 = new Frame2();
-                        	        frame2.setVisible(true); 
+                        	        frame2.setVisible(true);
+                        	        frame.setVisible(false);
                         	    }
                         	});
                         
@@ -86,5 +86,11 @@ public class Frame1 {
                 lblNewLabel.setIcon(new ImageIcon(img));
                 lblNewLabel.setBounds(0, 0, 899, 622);
                 frame.getContentPane().add(lblNewLabel);
+                
+                
+                
     }
+
+
+
 }

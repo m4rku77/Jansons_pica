@@ -1,15 +1,17 @@
 package pica;
 
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextPane;
-import java.awt.Font;
+import javax.swing.border.EmptyBorder;
 
 public class Frame3 extends JFrame {
 
@@ -48,6 +50,25 @@ public class Frame3 extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(null);
         Image img = new ImageIcon(this.getClass().getResource("/aboutscreen.png")).getImage();
+        
+        JLabel greenarrow = new JLabel("");
+        Image atpakalarrow = new ImageIcon(this.getClass().getResource("/atpakalarrow.png")).getImage();
+        greenarrow.setIcon(new ImageIcon(atpakalarrow));
+        greenarrow.setBounds(10, 575, 159, 103);
+        contentPane.add(greenarrow);
+        
+        greenarrow.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                setVisible(false); // Hide Frame2
+                Frame1 frame1 = new Frame1();
+                //frame1.setVisible(true); // Show Frame1
+            }
+        });
+
+
+        
+        
         
         JTextPane txtpnGraphicDesignerMarkuss = new JTextPane();
         txtpnGraphicDesignerMarkuss.setText("Graphic Designer: Markuss Jansons  ");

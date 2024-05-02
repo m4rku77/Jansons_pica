@@ -59,6 +59,25 @@ public class Frame4 extends JFrame {
 		Image contactInfo = new ImageIcon(this.getClass().getResource("/contactinfo.jpg")).getImage();
         
 		Image atpakalarrow = new ImageIcon(this.getClass().getResource("/atpakalarrow.png")).getImage();
+		 
+		
+		
+		 
+		 JLabel uzprieksuarrow = new JLabel("");
+	        Image greenarrow = new ImageIcon(this.getClass().getResource("/greenarrow2.png")).getImage();
+	        uzprieksuarrow.setIcon(new ImageIcon(greenarrow));
+	        
+	        uzprieksuarrow.addMouseListener(new MouseAdapter() {
+	            @Override
+	            public void mouseClicked(MouseEvent e) {
+	            	setVisible(false);
+	                Frame7 frame7 = new Frame7();
+	                frame7.setVisible(true);
+	            }
+	        });
+		 
+		 
+		 
 		
 		 JLabel lblNewLabel_1 = new JLabel("");
 	        lblNewLabel_1.setIcon(new ImageIcon(atpakalarrow));
@@ -148,5 +167,4 @@ public class Frame4 extends JFrame {
         lblNewLabel.setBounds(0, 0, 885, 657);
         contentPane.add(lblNewLabel);
 	}
-
 }

@@ -61,7 +61,7 @@ public class Frame2 extends JFrame {
     }
 
     private void initialize() {
-        // Set properties for this JFrame
+     
         this.setBounds(100, 100, 906, 700);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.getContentPane().setLayout(null);
@@ -69,22 +69,23 @@ public class Frame2 extends JFrame {
 
         
         
-        String[] picuVeidi = { "Hawaiian", "Margherita", "Greeke", "Pepperoni" };
+        String[] picuVeidi = { "Hawaiian", "Margherita", "Greek", "Pepperoni" };
+        
         Double [] picuCenas = {9.99, 5.99, 12.99, 8.99};
         Double[] picuToppings = {0.99, 1.49, 1.99, 1.99};
         		
         Image atpakalarrow = new ImageIcon(this.getClass().getResource("/atpakalarrow.png")).getImage();
         JLabel greenarrow = new JLabel("");
         greenarrow.setIcon(new ImageIcon(atpakalarrow));
-        greenarrow.setBounds(10, 557, 110, 86);
+        greenarrow.setBounds(38, 537, 110, 86);
         this.getContentPane().add(greenarrow);
 
        greenarrow.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
             	setVisible(false); 
-            	Frame5 frame5 = new Frame5();
-            	frame5.setVisible(true);
+            	Frame1 frame1 = new Frame1();
+            	// ka uzrādit frame 1
             }
         });
 

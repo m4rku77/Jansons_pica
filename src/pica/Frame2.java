@@ -40,6 +40,13 @@ public class Frame2 extends JFrame {
     /**
      * Launch the application.
      */
+
+   
+    
+    
+    
+    
+    
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -70,9 +77,10 @@ public class Frame2 extends JFrame {
         
         
         String[] picuVeidi = { "Hawaiian", "Margherita", "Greek", "Pepperoni" };
-        
         Double [] picuCenas = {9.99, 5.99, 12.99, 8.99};
         Double[] picuToppings = {0.99, 1.49, 1.99, 1.99};
+        
+        
         		
         Image atpakalarrow = new ImageIcon(this.getClass().getResource("/atpakalarrow.png")).getImage();
         JLabel greenarrow = new JLabel("");
@@ -110,14 +118,36 @@ public class Frame2 extends JFrame {
         		txtNoOfPizzas.setBorder(null);
         		txtNoOfPizzas.setBounds(63, 459, 171, 32);
         		getContentPane().add(txtNoOfPizzas);
+        		      
         		
-        		JComboBox comboBox_1 = new JComboBox();
-        		comboBox_1.setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
-        		comboBox_1.setFont(new Font("Ink Free", Font.BOLD, 15));
-        		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Small", "Medium ", "Large"}));
-        		comboBox_1.setBounds(63, 407, 85, 22);
-        		getContentPane().add(comboBox_1);
         		
+        		
+        		JComboBox<String> picuIzmeri = new JComboBox<>();
+        		picuIzmeri.setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
+        		picuIzmeri.setFont(new Font("Ink Free", Font.BOLD, 15));
+        		picuIzmeri.setModel(new DefaultComboBoxModel<>(new String[] {"Small", "Medium", "Large"}));
+        		picuIzmeri.setBounds(63, 407, 85, 22);
+        		getContentPane().add(picuIzmeri);
+
+        		picuIzmeri.addActionListener(e -> {
+        		    String selectedSize = (String) picuIzmeri.getSelectedItem();
+        		    double picuIzmeraCena = 0;
+        		    switch (selectedSize) {
+        		        case "Small":
+        		            picuIzmeraCena = 0; 
+        		            break;
+        		        case "Medium":
+        		            picuIzmeraCena = 5;
+        		            break;
+        		        case "Large":
+        		            picuIzmeraCena = 7.5;
+        		            break;
+        		        default:
+        		            
+        		            break;
+        		    }
+        		});
+
         		txtPizzasSize = new JTextField();
         		txtPizzasSize.setVerifyInputWhenFocusTarget(false);
         		txtPizzasSize.setText("Pizza's size");
@@ -135,29 +165,29 @@ public class Frame2 extends JFrame {
                 
                 
                 
-                JCheckBox chckbxOnions = new JCheckBox("Red Onions");
-                chckbxOnions.setOpaque(false);
-                chckbxOnions.setFont(new Font("Ink Free", Font.BOLD, 15));
-                chckbxOnions.setBounds(63, 296, 182, 22);
-                getContentPane().add(chckbxOnions);
+                JCheckBox redOnions = new JCheckBox("Red Onions");
+                redOnions.setOpaque(false);
+                redOnions.setFont(new Font("Ink Free", Font.BOLD, 15));
+                redOnions.setBounds(63, 296, 182, 22);
+                getContentPane().add(redOnions);
                 
-                JCheckBox chckbxOlives = new JCheckBox("Olives");
-                chckbxOlives.setOpaque(false);
-                chckbxOlives.setFont(new Font("Ink Free", Font.BOLD, 15));
-                chckbxOlives.setBounds(63, 271, 182, 22);
-                getContentPane().add(chckbxOlives);
+                JCheckBox olives = new JCheckBox("Olives");
+                olives.setOpaque(false);
+                olives.setFont(new Font("Ink Free", Font.BOLD, 15));
+                olives.setBounds(63, 271, 182, 22);
+                getContentPane().add(olives);
                 
-                JCheckBox chckbxMushrooms = new JCheckBox("Mushrooms");
-                chckbxMushrooms.setOpaque(false);
-                chckbxMushrooms.setFont(new Font("Ink Free", Font.BOLD, 15));
-                chckbxMushrooms.setBounds(63, 321, 182, 22);
-                getContentPane().add(chckbxMushrooms);
+                JCheckBox mushrooms = new JCheckBox("Mushrooms");
+                mushrooms.setOpaque(false);
+                mushrooms.setFont(new Font("Ink Free", Font.BOLD, 15));
+                mushrooms.setBounds(63, 321, 182, 22);
+                getContentPane().add(mushrooms);
                 
-                JCheckBox chckbxNewCheckBox = new JCheckBox("Cheese");
-                chckbxNewCheckBox.setFont(new Font("Ink Free", Font.BOLD, 15));
-                chckbxNewCheckBox.setOpaque(false);
-                chckbxNewCheckBox.setBounds(63, 246, 182, 22);
-                getContentPane().add(chckbxNewCheckBox);
+                JCheckBox cheese = new JCheckBox("Cheese");
+                cheese.setFont(new Font("Ink Free", Font.BOLD, 15));
+                cheese.setOpaque(false);
+                cheese.setBounds(63, 246, 182, 22);
+                getContentPane().add(cheese);
                 
                 txtExtraToppings = new JTextField();
                 txtExtraToppings.setVerifyInputWhenFocusTarget(false);
@@ -185,7 +215,6 @@ public class Frame2 extends JFrame {
                 getContentPane().add(txtPicuVeidi);
                 txtPicuVeidi.setColumns(10);
                 JComboBox<String> comboBox = new JComboBox<>(picuVeidi);
-                comboBox.setOpaque(false);
                 comboBox.setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
                 comboBox.setBackground(new Color(255, 255, 255));
                 comboBox.setFont(new Font("Ink Free", Font.BOLD, 15));
